@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.ui.theme
+package com.gontharuk.wperdenazakupy.ui.main.theme
 
 import android.app.Activity
 import android.os.Build
