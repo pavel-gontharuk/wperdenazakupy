@@ -63,7 +63,14 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview"
     implementation "androidx.compose.material3:material3"
     implementation "androidx.compose.foundation:foundation"
+    implementation "androidx.compose.runtime:runtime-livedata"
+
     implementation "androidx.navigation:navigation-compose:${versions.navigation}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.composelifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:${versions.composelifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.composelifecycle}"
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:${versions.composelifecycle}"
+
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.extjunit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"

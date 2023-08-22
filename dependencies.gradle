@@ -15,6 +15,7 @@ ext {
             activitycompose  : '1.7.2',
             composebom       : '2023.03.00',
             navigation       : '2.6.0',
+            composelifecycle : '2.6.1',
             composefoundation: '1.5.0',
             // presentation
             viewmodel        : '2.4.1',
