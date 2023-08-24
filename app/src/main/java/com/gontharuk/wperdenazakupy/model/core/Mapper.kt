@@ -1,6 +1,8 @@
 package com.gontharuk.wperdenazakupy.model.core
 
-interface Mapper<I, O> {
+interface Mapper<A, B> {
 
-    fun map(data: I): O
+    fun mapA(input: A): Result<B>
+
+    fun mapB(input: B): Result<A>
 }

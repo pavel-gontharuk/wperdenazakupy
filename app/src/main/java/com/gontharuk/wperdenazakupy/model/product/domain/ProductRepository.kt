@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface ProductRepository {
 
-    fun put(product: Product): Flow<Result<Unit>>
+    fun put(product: Product): Flow<Unit>
 
-    fun getAll(): Flow<Result<List<Product>>>
+    fun getAll(): Flow<List<Product>>
 }

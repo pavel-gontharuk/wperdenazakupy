@@ -12,7 +12,7 @@ fun ProductListItem(data: ProductListItemForm) {
 
     Column {
 
-        Text(text = data.name)
+        Text(text = data.title)
 
         Text(text = data.description)
 

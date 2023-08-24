@@ -3,11 +3,12 @@ package com.gontharuk.wperdenazakupy.ui.editproduct
 import androidx.lifecycle.viewModelScope
 import com.gontharuk.wperdenazakupy.model.coroutines.collectDeferred
 import com.gontharuk.wperdenazakupy.model.product.data.ProductBuilderImpl
-import com.gontharuk.wperdenazakupy.model.product.data.ProductRepositoryImpl
+import com.gontharuk.wperdenazakupy.model.product.data.prefs.ProductRepositoryImpl
 import com.gontharuk.wperdenazakupy.model.product.domain.ProductBuilder
 import com.gontharuk.wperdenazakupy.model.product.domain.ProductRepository
 import com.gontharuk.wperdenazakupy.model.product.entity.Product
 import com.gontharuk.wperdenazakupy.ui.core.viewmodel.WperdeViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class EditProductViewModel(
@@ -49,8 +50,7 @@ class EditProductViewModel(
 
             productRepository
                 .put(product)
-                .collectDeferred()
-                .getOrElse { return@launch }
+                .collect()
 
             updateState(
                 state().copy(

@@ -28,7 +28,7 @@ class ProductBuilderImpl : ProductBuilder {
     override fun build(): Result<Product> {
         val result: Result<Product> = try {
             val product = Product(
-                name = _name!!,
+                title = _name!!,
                 description = _description,
                 category = _category,
             )

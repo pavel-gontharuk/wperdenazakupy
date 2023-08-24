@@ -21,27 +21,26 @@ fun EditProduct(
             Column {
 
                 Text(text = "name")
-
-                Text(text = "category")
-
                 Text(text = "description")
+                Text(text = "category")
             }
 
             Column {
 
                 WperdeEditText(
                     text = state.name,
+                    label = "Name",
                     listener = { viewModel.onName(it) }
                 )
-
-                WperdeEditText(
-                    text = state.category,
-                    listener = { viewModel.onCategory(it) }
-                )
-
                 WperdeEditText(
                     text = state.description,
+                    label = "Description",
                     listener = { viewModel.onDescription(it) }
+                )
+                WperdeEditText(
+                    text = state.category,
+                    label = "Category",
+                    listener = { viewModel.onCategory(it) }
                 )
             }
         }

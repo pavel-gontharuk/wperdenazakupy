@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 apply from: "${rootProject.projectDir}/dependencies.gradle"
@@ -70,6 +71,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:${versions.composelifecycle}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.composelifecycle}"
     implementation "androidx.lifecycle:lifecycle-runtime-compose:${versions.composelifecycle}"
+
+    implementation "androidx.datastore:datastore-preferences:${versions.datastore}"
 
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.extjunit}"

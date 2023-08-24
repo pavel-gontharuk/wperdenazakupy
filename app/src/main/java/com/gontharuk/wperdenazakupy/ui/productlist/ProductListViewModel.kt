@@ -3,7 +3,7 @@ package com.gontharuk.wperdenazakupy.ui.productlist
 import androidx.lifecycle.viewModelScope
 import com.gontharuk.wperdenazakupy.model.core.Mapper
 import com.gontharuk.wperdenazakupy.model.coroutines.collectDeferred
-import com.gontharuk.wperdenazakupy.model.product.data.ProductRepositoryImpl
+import com.gontharuk.wperdenazakupy.model.product.data.prefs.ProductRepositoryImpl
 import com.gontharuk.wperdenazakupy.model.product.domain.ProductRepository
 import com.gontharuk.wperdenazakupy.model.product.entity.Product
 import com.gontharuk.wperdenazakupy.ui.core.viewmodel.WperdeViewModel
@@ -19,7 +19,7 @@ class ProductListViewModel(
     init {
         // TODO Implement DI
         productRepository = ProductRepositoryImpl()
-        productMapper = ProductToItemMapper()
+        productMapper = ProductItemMapper()
     }
 
     fun fetch() {
@@ -27,8 +27,8 @@ class ProductListViewModel(
             val list = productRepository
                 .getAll()
                 .collectDeferred()
-                .getOrElse { return@launch }
-                .map { productMapper.map(it) }
+                .map { productMapper.mapA(it) }
+                .map { it.getOrThrow() }
 
             updateState(state().copy(list = list))
         }
