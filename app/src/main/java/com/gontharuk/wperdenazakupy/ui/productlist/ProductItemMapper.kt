@@ -1,8 +1,8 @@
 package com.gontharuk.wperdenazakupy.ui.productlist
 
-import com.gontharuk.wperdenazakupy.model.core.Mapper
-import com.gontharuk.wperdenazakupy.model.product.entity.Category
-import com.gontharuk.wperdenazakupy.model.product.entity.Product
+import com.gontharuk.core.data.Mapper
+import com.gontharuk.wperdenazakupy.data.product.entity.Category
+import com.gontharuk.wperdenazakupy.data.product.entity.Product
 import com.gontharuk.wperdenazakupy.utils.asSuccess
 
 class ProductItemMapper : Mapper<Product, ProductListItemForm> {

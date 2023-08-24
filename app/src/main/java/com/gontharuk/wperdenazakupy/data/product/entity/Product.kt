@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.model.product.entity
+package com.gontharuk.wperdenazakupy.data.product.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

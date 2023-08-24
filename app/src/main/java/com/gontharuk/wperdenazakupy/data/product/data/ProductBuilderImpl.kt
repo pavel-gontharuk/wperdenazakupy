@@ -1,9 +1,9 @@
-package com.gontharuk.wperdenazakupy.model.product.data
+package com.gontharuk.wperdenazakupy.data.product.data
 
-import com.gontharuk.wperdenazakupy.model.product.domain.ProductBuilder
-import com.gontharuk.wperdenazakupy.model.product.entity.Category
-import com.gontharuk.wperdenazakupy.model.product.entity.Category.Companion.DEFAULT_CATEGORY
-import com.gontharuk.wperdenazakupy.model.product.entity.Product
+import com.gontharuk.wperdenazakupy.data.product.domain.ProductBuilder
+import com.gontharuk.wperdenazakupy.data.product.entity.Category
+import com.gontharuk.wperdenazakupy.data.product.entity.Category.Companion.DEFAULT_CATEGORY
+import com.gontharuk.wperdenazakupy.data.product.entity.Product
 
 class ProductBuilderImpl : ProductBuilder {
 

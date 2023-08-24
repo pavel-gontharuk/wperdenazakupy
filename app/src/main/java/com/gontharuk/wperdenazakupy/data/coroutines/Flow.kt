@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.model.coroutines
+package com.gontharuk.wperdenazakupy.data.coroutines
 
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.flow.Flow

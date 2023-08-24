@@ -50,8 +50,8 @@ android {
 }
 
 dependencies {
-
     def versions = rootProject.ext.versions
+    implementation project(path: ':core')
 
     implementation "androidx.core:core-ktx:${versions.ktx}"
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"

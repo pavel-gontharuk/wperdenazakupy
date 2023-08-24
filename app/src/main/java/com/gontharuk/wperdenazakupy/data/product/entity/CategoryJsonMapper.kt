@@ -1,6 +1,6 @@
-package com.gontharuk.wperdenazakupy.model.product.entity
+package com.gontharuk.wperdenazakupy.data.product.entity
 
-import com.gontharuk.wperdenazakupy.model.core.JsonMapper
+import com.gontharuk.core.data.JsonMapper
 import org.json.JSONObject
 
 class CategoryJsonMapper : JsonMapper<Category>() {

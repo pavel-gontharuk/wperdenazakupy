@@ -1,10 +1,4 @@
-package com.gontharuk.wperdenazakupy.model.product.data.store
-
-import com.gontharuk.wperdenazakupy.model.core.Store
-import com.gontharuk.wperdenazakupy.model.product.data.ProductStore
-import com.gontharuk.wperdenazakupy.model.product.domain.ProductRepository
-import com.gontharuk.wperdenazakupy.model.product.entity.Product
-import kotlinx.coroutines.flow.Flow
+package com.gontharuk.wperdenazakupy.data.product.data.store
 
 //class ProductRepositoryImpl : ProductRepository {
 //

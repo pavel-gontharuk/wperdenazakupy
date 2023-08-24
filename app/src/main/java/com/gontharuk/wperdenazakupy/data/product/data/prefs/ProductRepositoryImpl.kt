@@ -1,11 +1,11 @@
-package com.gontharuk.wperdenazakupy.model.product.data.prefs
+package com.gontharuk.wperdenazakupy.data.product.data.prefs
 
 import android.content.SharedPreferences
-import com.gontharuk.wperdenazakupy.model.core.Mapper
-import com.gontharuk.wperdenazakupy.model.product.domain.ProductRepository
-import com.gontharuk.wperdenazakupy.model.product.entity.CategoryJsonMapper
-import com.gontharuk.wperdenazakupy.model.product.entity.Product
-import com.gontharuk.wperdenazakupy.model.product.entity.ProductJsonMapper
+import com.gontharuk.core.data.Mapper
+import com.gontharuk.wperdenazakupy.data.product.domain.ProductRepository
+import com.gontharuk.wperdenazakupy.data.product.entity.CategoryJsonMapper
+import com.gontharuk.wperdenazakupy.data.product.entity.Product
+import com.gontharuk.wperdenazakupy.data.product.entity.ProductJsonMapper
 import com.gontharuk.wperdenazakupy.sahredprefs.PrefProvider
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

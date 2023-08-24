@@ -1,6 +1,6 @@
-package com.gontharuk.wperdenazakupy.model.product.domain
+package com.gontharuk.wperdenazakupy.data.product.domain
 
-import com.gontharuk.wperdenazakupy.model.product.entity.Product
+import com.gontharuk.wperdenazakupy.data.product.entity.Product
 
 interface ProductBuilder {
 
