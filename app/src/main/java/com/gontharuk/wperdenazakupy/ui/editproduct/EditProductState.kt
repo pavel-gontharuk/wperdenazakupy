@@ -5,4 +5,5 @@ data class EditProductState(
     val description: String = "",
     val category: String = "",
     val saveBtn: String = "",
+    val focus: EditProductFocus = EditProductFocus.NONE,
 )
