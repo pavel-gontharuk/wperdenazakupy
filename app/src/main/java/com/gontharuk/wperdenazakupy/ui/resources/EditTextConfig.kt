@@ -18,6 +18,6 @@ sealed class EditTextConfig(
             color = Color.Black,
         ),
         modifier = Modifier
-            .textDefault()
+            .default()
     )
 }

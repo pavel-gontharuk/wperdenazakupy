@@ -4,5 +4,9 @@ enum class EditProductFocus {
     NAME,
     CATEGORY,
     DESCRIPTION,
-    NONE,
+    NONE;
+
+    fun isState(state: EditProductFocus): Boolean {
+        return this == state || this == NONE
+    }
 }

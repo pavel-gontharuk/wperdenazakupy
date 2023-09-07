@@ -20,6 +20,6 @@ sealed class TextConfig(
             textAlign = TextAlign.Center
         ),
         modifier = Modifier
-            .textDefault()
+            .default()
     )
 }
