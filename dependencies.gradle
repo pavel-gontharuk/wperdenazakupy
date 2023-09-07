@@ -7,6 +7,8 @@ ext {
             gradle           : '8.1.0',
             // di
             dagger           : '2.47',
+            // data
+            room             : '2.5.2',
             // ui
             constraintlayout : '2.0.4',
             recyclerview     : '1.2.1',

@@ -1,11 +1,14 @@
 package com.gontharuk.wperdenazakupy.data.product.entity
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
+@Entity(tableName = "product")
 @Parcelize
 data class Product(
-    val title: String,
+    @PrimaryKey val title: String,
     val description: String,
-    val category: Category
+    val category: Category,
 ) : Parcelable

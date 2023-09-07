@@ -18,12 +18,16 @@ class ProductRepositoryImpl(
     //TODO DI
     private val prefs: SharedPreferences = PrefProvider.get(PrefProvider.Store.PRODUCT)
 
-    override fun put(product: Product): Flow<Unit> = flow {
+    override fun put(vararg product: Product): Flow<Unit> = flow {
         prefs.edit()
-            .putString(
-                product.hashCode().toString(),
-                mapper.mapA(product).getOrThrow().toString()
-            ).apply()
+            .apply {
+                product.iterator().forEach { next ->
+                    putString(
+                        product.hashCode().toString(),
+                        mapper.mapA(next).getOrThrow().toString()
+                    )
+                }
+            }.apply()
         emit(Unit)
     }
 
