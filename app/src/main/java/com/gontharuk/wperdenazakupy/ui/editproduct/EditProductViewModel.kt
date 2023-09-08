@@ -1,14 +1,16 @@
 package com.gontharuk.wperdenazakupy.ui.editproduct
 
 import androidx.lifecycle.viewModelScope
+import com.gontharuk.wperdenazakupy.data.database.ProductRepositoryImpl
 import com.gontharuk.wperdenazakupy.data.product.data.ProductBuilderImpl
-import com.gontharuk.wperdenazakupy.data.product.data.prefs.ProductRepositoryImpl
 import com.gontharuk.wperdenazakupy.data.product.domain.ProductBuilder
 import com.gontharuk.wperdenazakupy.data.product.domain.ProductRepository
 import com.gontharuk.wperdenazakupy.data.product.entity.Product
 import com.gontharuk.wperdenazakupy.ui.core.viewmodel.WperdeViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class EditProductViewModel(
     form: EditProductState
@@ -47,9 +49,11 @@ class EditProductViewModel(
                 .build()
                 .getOrElse { return@launch }
 
-            productRepository
-                .put(product)
-                .collect()
+            withContext(Dispatchers.IO){
+                productRepository
+                    .put(product)
+                    .collect()
+            }
 
             updateState(
                 state().copy(
