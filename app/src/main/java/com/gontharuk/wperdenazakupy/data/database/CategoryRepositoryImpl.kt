@@ -2,7 +2,7 @@ package com.gontharuk.wperdenazakupy.data.database
 
 import com.gontharuk.wperdenazakupy.data.product.domain.CategoryRepository
 import com.gontharuk.wperdenazakupy.data.product.entity.Category
-import com.gontharuk.wperdenazakupy.ui.main.WperdeApplication
+import com.gontharuk.wperdenazakupy.presentation.WperdeApplication
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
