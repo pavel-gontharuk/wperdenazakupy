@@ -1,67 +1,40 @@
 package com.gontharuk.wperdenazakupy.presentation.features.editproduct
 
 import androidx.lifecycle.viewModelScope
-import com.gontharuk.wperdenazakupy.data.database.ProductRepositoryImpl
-import com.gontharuk.wperdenazakupy.data.product.data.ProductBuilderImpl
-import com.gontharuk.wperdenazakupy.data.product.domain.ProductBuilder
-import com.gontharuk.wperdenazakupy.data.product.domain.ProductRepository
-import com.gontharuk.wperdenazakupy.data.product.entity.Product
+import com.gontharuk.wperdenazakupy.domain.usecase.ProductUseCase
 import com.gontharuk.wperdenazakupy.presentation.core.viewmodel.WperdeViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class EditProductViewModel(
-    form: EditProductState
-) : WperdeViewModel<EditProductState>(form) {
-
-    private val productRepository: ProductRepository
-    private val productBuilder: ProductBuilder
-
-    init {
-        // TODO Implement DI
-        productRepository = ProductRepositoryImpl()
-        productBuilder = ProductBuilderImpl()
-    }
+class EditProductViewModel @Inject constructor(
+    private val productUseCase: ProductUseCase
+) : WperdeViewModel<EditProductState>(EditProductState()) {
 
     fun onName(name: String) {
-        updateState(state().copy(name = name))
-    }
-
-    fun onCategory(category: String) {
-        updateState(state().copy(category = category))
+        updateState { it.copy(name = name) }
     }
 
     fun onDescription(description: String) {
-        updateState(state().copy(description = description))
+        updateState { it.copy(description = description) }
     }
 
     fun save() {
         viewModelScope.launch {
 
-            val state = state().copy()
-
-            val product: Product = productBuilder
-                .name(state.name)
-                .description(state.description)
-                .category(state.category)
-                .build()
-                .getOrElse { return@launch }
-
-            withContext(Dispatchers.IO){
-                productRepository
-                    .put(product)
-                    .collect()
+            withContext(Dispatchers.IO) {
+                state().copy()
+                    .toProduct()
+                    .also { productUseCase.put(it) }
             }
 
-            updateState(
-                state().copy(
+            updateState {
+                it.copy(
                     name = "",
                     description = "",
-                    category = "",
                 )
-            )
+            }
         }
     }
 }

@@ -1,42 +1,26 @@
 package com.gontharuk.wperdenazakupy.presentation.features.productlist
 
 import androidx.lifecycle.viewModelScope
-import com.gontharuk.core.data.Mapper
-import com.gontharuk.wperdenazakupy.data.database.ProductRepositoryImpl
-import com.gontharuk.wperdenazakupy.data.product.domain.ProductRepository
-import com.gontharuk.wperdenazakupy.data.product.entity.Product
+import com.gontharuk.wperdenazakupy.domain.usecase.ProductUseCase
 import com.gontharuk.wperdenazakupy.presentation.core.viewmodel.WperdeViewModel
-import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class ProductListViewModel(
-    form: ProductListState
-) : WperdeViewModel<ProductListState>(form) {
-
-    private val productRepository: ProductRepository
-    private val productMapper: Mapper<Product, ProductListItemForm>
-
-    init {
-        // TODO Implement DI
-        productRepository = ProductRepositoryImpl()
-        productMapper = ProductItemMapper()
-    }
+class ProductListViewModel @Inject constructor(
+    private val productUseCase: ProductUseCase
+) : WperdeViewModel<ProductListState>(ProductListState()) {
 
     fun fetch() {
         viewModelScope.launch {
             val list = withContext(Dispatchers.IO) {
-                val deferred = CompletableDeferred<List<Product>>()
-                productRepository
+                productUseCase
                     .getAll()
-                    .collect { deferred.complete(it) }
-                deferred.await()
-                    .map { productMapper.mapA(it) }
-                    .map { it.getOrThrow() }
+                    .map { ProductListItemForm(it) }
             }
 
-            updateState(state().copy(list = list))
+            updateState { it.copy(list = list) }
         }
     }
 }

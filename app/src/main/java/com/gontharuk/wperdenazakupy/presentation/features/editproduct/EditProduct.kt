@@ -2,14 +2,18 @@ package com.gontharuk.wperdenazakupy.presentation.features.editproduct
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.gontharuk.wperdenazakupy.presentation.WperdeApplication
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeButton
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeEditText
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeText
@@ -21,7 +25,7 @@ import com.gontharuk.wperdenazakupy.presentation.resources.hintEditText
 @Composable
 fun EditProduct(
     viewModel: EditProductViewModel,
-    state: EditProductState
+    state: EditProductState,
 ) {
 
     val focusManager = LocalFocusManager.current
@@ -39,14 +43,6 @@ fun EditProduct(
         Column {
 
             WperdeEditText(
-                text = state.category,
-                label = "Category",
-                listener = { viewModel.onCategory(it) },
-                modifier = Modifier
-                    .hintEditText(),
-                config = EditTextConfig.HintEditText()
-            )
-            WperdeEditText(
                 text = state.name,
                 label = "Name",
                 listener = { viewModel.onName(it) },
@@ -63,9 +59,8 @@ fun EditProduct(
                 config = EditTextConfig.HintEditText()
             )
         }
-        Spacer(Modifier.weight(1f))
         WperdeButton(
-            text = state.saveBtn,
+            text = "Save",
             onClick = { viewModel.save() },
             modifier = Modifier
                 .button()

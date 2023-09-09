@@ -10,9 +10,8 @@ abstract class WperdeViewModel<S>(state: S) : ViewModel() {
     private val _state: MutableStateFlow<S> = MutableStateFlow(state)
     val state: StateFlow<S> = _state
 
-    protected fun updateState(update: S) {
-        update.log()
-        _state.value = update
+    protected fun updateState(update: (S) -> S) {
+        _state.value = update(state())
     }
 
     protected fun state(): S = _state.value!!

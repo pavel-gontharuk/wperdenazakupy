@@ -1,37 +1,19 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-parcelize'
-    id 'kotlin-kapt'
 }
 
 apply from: "${rootProject.projectDir}/dependencies.gradle"
 
-kapt {
-    // optimize build time
-    useBuildCache = true
-    correctErrorTypes = true
-    arguments {
-        arg('dagger.formatGeneratedSource', 'disabled')
-    }
-    javacOptions { option("-Adagger.fastInit=enabled") }
-}
-
 android {
-    namespace 'com.gontharuk.wperdenazakupy'
+    namespace 'com.gontharuk.wperdenazakupy.presentation'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.gontharuk.wperdenazakupy"
         minSdk 26
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -47,32 +29,16 @@ android {
     kotlinOptions {
         jvmTarget = '18'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.4.3'
-    }
-    packaging {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
-    def versions = rootProject.ext.versions
-    implementation project(path: ':core')
-    implementation project(path: ':domain')
-    implementation project(path: ':data')
+
+    apply from: "${rootProject.projectDir}/dependencies.gradle"
 
     implementation "androidx.core:core-ktx:${versions.ktx}"
-
-    implementation "com.google.dagger:dagger:${versions.dagger}"
-    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
-
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"
+
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.ktxruntime}"
     implementation "androidx.activity:activity-compose:${versions.activitycompose}"
     implementation platform("androidx.compose:compose-bom:${versions.composebom}")
@@ -88,9 +54,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:${versions.composelifecycle}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.composelifecycle}"
     implementation "androidx.lifecycle:lifecycle-runtime-compose:${versions.composelifecycle}"
-
-    implementation "androidx.datastore:datastore-preferences:${versions.datastore}"
-    implementation "androidx.room:room-ktx:${versions.room}"
 
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.extjunit}"

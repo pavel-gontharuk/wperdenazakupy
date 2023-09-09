@@ -2,21 +2,19 @@ package com.gontharuk.wperdenazakupy.presentation.features.productlist
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Divider
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeText
 
 @Composable
 fun ProductListItem(data: ProductListItemForm) {
 
     Column {
 
-        Text(text = data.title)
+        WperdeText(text = data.title)
 
-        Text(text = data.description)
-
-        Text(text = data.category)
+        WperdeText(text = data.description)
 
         Divider(color = Color.Red, thickness = 2.dp)
     }
