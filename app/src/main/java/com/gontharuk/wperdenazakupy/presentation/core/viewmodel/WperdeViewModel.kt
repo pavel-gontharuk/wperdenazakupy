@@ -1,7 +1,6 @@
 package com.gontharuk.wperdenazakupy.presentation.core.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.gontharuk.wperdenazakupy.utils.log
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

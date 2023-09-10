@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.presentation.main.router
+package com.gontharuk.wperdenazakupy.presentation.router
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController

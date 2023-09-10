@@ -9,7 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.gontharuk.wperdenazakupy.di.layers.ComponentProvider
-import com.gontharuk.wperdenazakupy.presentation.main.router.MainNavHost
+import com.gontharuk.wperdenazakupy.presentation.router.MainNavHost
 import com.gontharuk.wperdenazakupy.presentation.main.theme.WperdenazakupyTheme
 
 class WperdeActivity : ComponentActivity() {

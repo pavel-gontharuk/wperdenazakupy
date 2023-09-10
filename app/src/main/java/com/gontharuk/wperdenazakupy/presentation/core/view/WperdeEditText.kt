@@ -6,9 +6,8 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalFocusManager
+import com.gontharuk.core.utils.log
 import com.gontharuk.wperdenazakupy.presentation.resources.EditTextConfig
-import com.gontharuk.wperdenazakupy.utils.log
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

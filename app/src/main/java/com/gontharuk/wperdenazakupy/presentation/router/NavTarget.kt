@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.presentation.main.router
+package com.gontharuk.wperdenazakupy.presentation.router
 
 enum class NavTarget(
     val tag: String,
