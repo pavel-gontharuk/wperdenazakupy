@@ -7,13 +7,8 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.gontharuk.wperdenazakupy.presentation.WperdeApplication
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeButton
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeEditText
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeText
@@ -61,7 +56,10 @@ fun EditProduct(
         }
         WperdeButton(
             text = "Save",
-            onClick = { viewModel.save() },
+            onClick = {
+                focusManager.clearFocus()
+                viewModel.save()
+            },
             modifier = Modifier
                 .button()
         )

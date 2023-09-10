@@ -1,7 +1,7 @@
 package com.gontharuk.wperdenazakupy.presentation.features.editproduct
 
 import androidx.lifecycle.viewModelScope
-import com.gontharuk.wperdenazakupy.domain.usecase.ProductUseCase
+import com.gontharuk.wperdenazakupy.domain.usecase.productusecase.ProductUseCase
 import com.gontharuk.wperdenazakupy.presentation.core.viewmodel.WperdeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

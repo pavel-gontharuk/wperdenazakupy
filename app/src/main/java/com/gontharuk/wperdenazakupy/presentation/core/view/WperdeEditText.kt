@@ -20,8 +20,6 @@ fun WperdeEditText(
     modifier: Modifier
 ) {
 
-    val focusManager = LocalFocusManager.current
-
     OutlinedTextField(
         value = text,
         onValueChange = { listener.onEvent(it) },

@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.domain.usecase
+package com.gontharuk.wperdenazakupy.domain.usecase.productusecase
 
 import com.gontharuk.wperdenazakupy.domain.model.Product
 
