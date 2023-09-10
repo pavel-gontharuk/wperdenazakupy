@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 apply from: "${rootProject.projectDir}/dependencies.gradle"
@@ -69,8 +69,9 @@ dependencies {
 
     implementation "androidx.core:core-ktx:${versions.ktx}"
 
-    implementation "com.google.dagger:dagger:${versions.dagger}"
-    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+    implementation "com.google.dagger:hilt-android:${versions.dagger}"
+    kapt "com.google.dagger:hilt-compiler:${versions.dagger}"
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"

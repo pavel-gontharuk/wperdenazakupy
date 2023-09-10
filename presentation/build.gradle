@@ -38,7 +38,6 @@ dependencies {
     implementation project(path: ':domain')
 
     implementation "androidx.core:core-ktx:${versions.ktx}"
-    implementation "com.google.dagger:dagger:${versions.dagger}"
 
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"

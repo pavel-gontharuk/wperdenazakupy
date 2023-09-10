@@ -4,18 +4,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.gontharuk.wperdenazakupy.di.features.productlist.ProductListComponent
-import com.gontharuk.wperdenazakupy.presentation.core.viewmodel.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-fun ProductListScreen(component: ProductListComponent) {
+fun ProductListScreen(
+    viewModel: ProductListViewModel = hiltViewModel()
+) {
 
-    val viewModel: ProductListViewModel = viewModel { component.getProductListViewModel() }
     val state: ProductListState by viewModel.state.collectAsState()
 
     LaunchedEffect(viewModel) {
         viewModel.fetch()
     }
 
-    ProductList(viewModel, state)
+    ProductList(state)
 }

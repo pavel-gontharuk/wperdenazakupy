@@ -1,11 +1,21 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 apply from: "${rootProject.projectDir}/dependencies.gradle"
+
+kapt {
+    // optimize build time
+    useBuildCache = true
+    correctErrorTypes = true
+    arguments {
+        arg('dagger.formatGeneratedSource', 'disabled')
+    }
+    javacOptions { option("-Adagger.fastInit=enabled") }
+}
 
 android {
     namespace 'com.gontharuk.wperdenazakupy.data'
@@ -39,8 +49,12 @@ dependencies {
     implementation project(':domain')
 
     implementation "androidx.core:core-ktx:${versions.ktx}"
+
     implementation "androidx.room:room-ktx:${versions.room}"
     kapt "androidx.room:room-compiler:${versions.room}"
+
+    implementation "com.google.dagger:hilt-android:${versions.dagger}"
+    kapt "com.google.dagger:hilt-compiler:${versions.dagger}"
 
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.extjunit}"

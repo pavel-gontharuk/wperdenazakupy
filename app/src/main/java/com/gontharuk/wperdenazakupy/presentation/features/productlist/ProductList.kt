@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun ProductList(
-    viewModel: ProductListViewModel,
     state: ProductListState
 ) {
 
