@@ -4,16 +4,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.gontharuk.wperdenazakupy.di.DaggerMainComponent
-import com.gontharuk.wperdenazakupy.presentation.WperdeApplication
+import com.gontharuk.wperdenazakupy.di.features.productlist.ProductListComponent
 import com.gontharuk.wperdenazakupy.presentation.core.viewmodel.viewModel
 
 @Composable
-fun ProductListScreen() {
+fun ProductListScreen(component: ProductListComponent) {
 
-    val viewModel: ProductListViewModel = viewModel {
-        DaggerMainComponent.factory().create(WperdeApplication.dataComponent).getProductListViewModel()
-    }
+    val viewModel: ProductListViewModel = viewModel { component.getProductListViewModel() }
     val state: ProductListState by viewModel.state.collectAsState()
 
     LaunchedEffect(viewModel) {
