@@ -1,9 +1,21 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 apply from: "${rootProject.projectDir}/dependencies.gradle"
+
+kapt {
+    // optimize build time
+    useBuildCache = true
+    correctErrorTypes = true
+    arguments {
+        arg('dagger.formatGeneratedSource', 'disabled')
+    }
+    javacOptions { option("-Adagger.fastInit=enabled") }
+}
 
 android {
     namespace 'com.gontharuk.wperdenazakupy.presentation'
@@ -32,12 +44,15 @@ android {
 }
 
 dependencies {
-
     def versions = rootProject.ext.versions
     implementation project(path: ':core')
     implementation project(path: ':domain')
 
     implementation "androidx.core:core-ktx:${versions.ktx}"
+
+    implementation "com.google.dagger:hilt-android:${versions.dagger}"
+    kapt "com.google.dagger:hilt-compiler:${versions.dagger}"
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"
