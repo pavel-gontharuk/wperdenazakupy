@@ -13,4 +13,4 @@ fun EditProductScreen(
     val state: EditProductState by viewModel.state.collectAsState()
 
     EditProduct(viewModel, state)
-} 
+}
