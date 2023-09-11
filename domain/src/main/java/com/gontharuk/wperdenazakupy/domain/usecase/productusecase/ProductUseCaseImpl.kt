@@ -2,8 +2,9 @@ package com.gontharuk.wperdenazakupy.domain.usecase.productusecase
 
 import com.gontharuk.wperdenazakupy.domain.model.Product
 import com.gontharuk.wperdenazakupy.domain.repository.ProductRepository
+import javax.inject.Inject
 
-class ProductUseCaseImpl(
+class ProductUseCaseImpl @Inject constructor(
     private val productRepository: ProductRepository
 ) : ProductUseCase {
 
