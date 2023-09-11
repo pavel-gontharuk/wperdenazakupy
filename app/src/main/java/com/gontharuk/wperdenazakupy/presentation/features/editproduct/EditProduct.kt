@@ -13,7 +13,6 @@ import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeButton
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeEditText
 import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeText
 import com.gontharuk.wperdenazakupy.presentation.extensions.cleanClickable
-import com.gontharuk.wperdenazakupy.presentation.resources.EditTextConfig
 import com.gontharuk.wperdenazakupy.presentation.resources.button
 import com.gontharuk.wperdenazakupy.presentation.resources.hintEditText
 
@@ -43,7 +42,6 @@ fun EditProduct(
                 listener = { viewModel.onName(it) },
                 modifier = Modifier
                     .hintEditText(),
-                config = EditTextConfig.HintEditText()
             )
             WperdeEditText(
                 text = state.description,
@@ -51,7 +49,6 @@ fun EditProduct(
                 modifier = Modifier
                     .hintEditText(),
                 listener = { viewModel.onDescription(it) },
-                config = EditTextConfig.HintEditText()
             )
         }
         WperdeButton(

@@ -7,15 +7,18 @@ import androidx.navigation.compose.composable
 import com.gontharuk.wperdenazakupy.presentation.features.editproduct.EditProductScreen
 import com.gontharuk.wperdenazakupy.presentation.features.menu.MenuScreen
 import com.gontharuk.wperdenazakupy.presentation.features.productlist.ProductListScreen
+import com.gontharuk.wperdenazakupy.presentation.router.targets.EditProductScreenTarget
+import com.gontharuk.wperdenazakupy.presentation.router.targets.MenuScreenTarget
+import com.gontharuk.wperdenazakupy.presentation.router.targets.ProductListScreenTarget
 
 @Composable
 fun MainNavHost(
     navController: NavHostController
 ) {
 
-    NavHost(navController = navController, startDestination = NavTarget.MENU_SCREEN.tag) {
-        composable(NavTarget.MENU_SCREEN.tag) { MenuScreen(navHostController = navController) }
-        composable(NavTarget.PRODUCT_LIST.tag) { ProductListScreen() }
-        composable(NavTarget.EDIT_PRODUCT_SCREEN.tag) { EditProductScreen() }
+    NavHost(navController = navController, startDestination = MenuScreenTarget.tag) {
+        composable(MenuScreenTarget.tag) { MenuScreen(navHostController = navController) }
+        composable(ProductListScreenTarget.tag) { ProductListScreen() }
+        composable(EditProductScreenTarget.tag) { EditProductScreen() }
     }
 }

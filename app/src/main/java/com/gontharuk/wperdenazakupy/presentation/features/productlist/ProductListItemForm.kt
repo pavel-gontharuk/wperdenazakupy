@@ -5,9 +5,9 @@ import com.gontharuk.wperdenazakupy.domain.model.Product
 data class ProductListItemForm(
     val title: String,
     val description: String
-) {
-    constructor(product: Product) : this(
-        title = product.name,
-        description = product.description,
-    )
-}
+)
+
+fun Product.toForm(): ProductListItemForm = ProductListItemForm(
+    title = this.name,
+    description = this.description,
+)
