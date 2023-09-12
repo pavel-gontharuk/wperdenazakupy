@@ -52,6 +52,7 @@ dependencies {
 
     implementation "androidx.room:room-ktx:${versions.room}"
     kapt "androidx.room:room-compiler:${versions.room}"
+    implementation "androidx.datastore:datastore-preferences:${versions.datastore}"
 
     implementation "com.google.dagger:hilt-android:${versions.dagger}"
     kapt "com.google.dagger:hilt-compiler:${versions.dagger}"

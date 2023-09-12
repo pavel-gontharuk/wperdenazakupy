@@ -1,7 +1,7 @@
-package com.gontharuk.wperdenazakupy.presentation.di.product
+package com.gontharuk.wperdenazakupy.presentation.usecasedi
 
-import com.gontharuk.wperdenazakupy.domain.usecase.productusecase.ProductUseCase
-import com.gontharuk.wperdenazakupy.domain.usecase.productusecase.ProductUseCaseImpl
+import com.gontharuk.wperdenazakupy.domain.usecase.product.ProductUseCase
+import com.gontharuk.wperdenazakupy.domain.usecase.product.ProductUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

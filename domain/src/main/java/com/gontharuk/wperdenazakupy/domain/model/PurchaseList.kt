@@ -1,6 +1,6 @@
 package com.gontharuk.wperdenazakupy.domain.model
 
-data class Product(
+data class PurchaseList(
     val name: String,
-    val description: String
+    val list: List<String> = emptyList()
 )

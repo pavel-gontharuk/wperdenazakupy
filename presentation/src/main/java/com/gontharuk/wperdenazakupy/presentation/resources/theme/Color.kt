@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.presentation.main.theme
+package com.gontharuk.wperdenazakupy.presentation.resources.theme
 
 import androidx.compose.ui.graphics.Color
 

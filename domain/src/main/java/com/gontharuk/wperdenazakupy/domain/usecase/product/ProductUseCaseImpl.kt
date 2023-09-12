@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.domain.usecase.productusecase
+package com.gontharuk.wperdenazakupy.domain.usecase.product
 
 import com.gontharuk.wperdenazakupy.domain.model.Product
 import com.gontharuk.wperdenazakupy.domain.repository.ProductRepository
@@ -8,11 +8,11 @@ class ProductUseCaseImpl @Inject constructor(
     private val productRepository: ProductRepository
 ) : ProductUseCase {
 
-    override suspend fun put(vararg product: Product) {
+    override suspend fun putProduct(vararg product: Product) {
         productRepository.put(*product)
     }
 
-    override suspend fun getAll(): List<Product> {
+    override suspend fun products(): List<Product> {
         return productRepository.getAll()
     }
 }

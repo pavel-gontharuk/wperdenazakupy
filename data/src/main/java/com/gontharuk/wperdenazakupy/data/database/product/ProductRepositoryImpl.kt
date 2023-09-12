@@ -2,8 +2,9 @@ package com.gontharuk.wperdenazakupy.data.database.product
 
 import com.gontharuk.wperdenazakupy.domain.model.Product
 import com.gontharuk.wperdenazakupy.domain.repository.ProductRepository
+import javax.inject.Inject
 
-class ProductRepositoryImpl(
+class ProductRepositoryImpl @Inject constructor(
     private val productDao: ProductDao
 ) : ProductRepository {
 
@@ -19,7 +20,7 @@ class ProductRepositoryImpl(
 
     override suspend fun getAll(): List<Product> {
         return productDao.getAll()
-            .map { it.toProduct() }
+            .map { it.toModel() }
     }
 
     override suspend fun delete(key: String) {

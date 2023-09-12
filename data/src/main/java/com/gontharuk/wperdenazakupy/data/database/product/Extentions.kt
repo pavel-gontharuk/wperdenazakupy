@@ -4,10 +4,10 @@ import com.gontharuk.wperdenazakupy.domain.model.Product
 
 fun Product.toEntity(): ProductEntity = ProductEntity(
     name = this.name,
-    description = this.description,
+    description = this.description
 )
 
-fun ProductEntity.toProduct(): Product = Product(
+fun ProductEntity.toModel(): Product = Product(
     name = this.name,
-    description = this.description,
+    description = this.description
 )
