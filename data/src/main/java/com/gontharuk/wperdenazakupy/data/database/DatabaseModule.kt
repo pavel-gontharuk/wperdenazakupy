@@ -2,6 +2,7 @@ package com.gontharuk.wperdenazakupy.data.database
 
 import android.content.Context
 import androidx.room.Room
+import com.gontharuk.wperdenazakupy.data.database.bucket.BucketDao
 import com.gontharuk.wperdenazakupy.data.database.product.ProductDao
 import dagger.Module
 import dagger.Provides
@@ -28,4 +29,9 @@ object DatabaseModule {
     fun provideProductDao(
         database: WperdeDatabase
     ): ProductDao = database.productDao()
+
+    @Provides
+    fun provideBucketDao(
+        database: WperdeDatabase
+    ): BucketDao = database.bucketDao()
 }

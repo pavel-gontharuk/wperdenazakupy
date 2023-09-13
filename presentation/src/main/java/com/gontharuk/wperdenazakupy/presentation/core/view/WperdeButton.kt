@@ -7,8 +7,8 @@ import androidx.compose.ui.Modifier
 @Composable
 fun WperdeButton(
     text: String,
-    onClick: () -> Unit,
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit = {},
 ) {
     Button(
         onClick = onClick,

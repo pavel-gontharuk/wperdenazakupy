@@ -14,11 +14,11 @@ import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeText
 import com.gontharuk.wperdenazakupy.presentation.resources.button
 
 @Composable
-fun EditPurchaseListScreen(
-    viewModel: EditPurchaseListViewModel = hiltViewModel()
+fun EditBucketScreen(
+    viewModel: EditBucketViewModel = hiltViewModel()
 ) {
 
-    val state: EditPurchaseListState by viewModel.state.collectAsState()
+    val state: EditBucketState by viewModel.state.collectAsState()
 
     LaunchedEffect(viewModel) {
         viewModel.fetch()
@@ -28,9 +28,9 @@ fun EditPurchaseListScreen(
         WperdeText(text = "Edit Purchase List")
         LazyColumn {
             items(state.list) {
-                EditPurchaseItemView(
+                EditBucketItemView(
                     item = it,
-                    onClicked = { viewModel }
+                    onClicked = { viewModel.clicked(it) }
                 )
             }
         }
