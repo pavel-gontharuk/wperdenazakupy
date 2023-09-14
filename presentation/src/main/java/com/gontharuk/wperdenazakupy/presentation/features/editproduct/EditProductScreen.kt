@@ -42,7 +42,7 @@ fun EditProductScreen(
             WperdeEditText(
                 text = state.name,
                 label = "Name",
-                listener = { viewModel.onName(it) },
+                listener = viewModel::onName,
                 modifier = Modifier
                     .hintEditText(),
             )
@@ -51,7 +51,7 @@ fun EditProductScreen(
                 label = "Description",
                 modifier = Modifier
                     .hintEditText(),
-                listener = { viewModel.onDescription(it) },
+                listener = viewModel::onDescription
             )
         }
         WperdeButton(

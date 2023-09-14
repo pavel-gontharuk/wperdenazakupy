@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.presentation.features.editpurchaselist
+package com.gontharuk.wperdenazakupy.presentation.features.editbucket
 
 data class EditBucketItem(
     val id: Int,

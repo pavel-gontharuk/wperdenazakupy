@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.presentation.features.editpurchaselist
+package com.gontharuk.wperdenazakupy.presentation.features.editbucket
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,12 +18,12 @@ import com.gontharuk.wperdenazakupy.presentation.resources.cleanClickable
 @Composable
 fun EditBucketItemView(
     item: EditBucketItem,
-    onClicked: () -> Unit
+    onClicked: (EditBucketItem) -> Unit
 ) {
     Column {
         Row(
             modifier = Modifier
-                .cleanClickable { onClicked() }
+                .cleanClickable { onClicked(item) }
                 .fillMaxSize()
                 .statusBarsPadding()
                 .navigationBarsPadding()

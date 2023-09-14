@@ -7,14 +7,14 @@ import com.gontharuk.wperdenazakupy.data.database.product.ProductDao
 import com.gontharuk.wperdenazakupy.data.database.product.ProductEntity
 import com.gontharuk.wperdenazakupy.data.database.bucket.BucketDao
 import com.gontharuk.wperdenazakupy.data.database.bucket.BucketEntity
-import com.gontharuk.wperdenazakupy.data.database.converters.ListConverter
+import com.gontharuk.wperdenazakupy.data.database.converters.SetConverter
 
 @Database(
     entities = [ProductEntity::class, BucketEntity::class],
     version = 1,
     exportSchema = false
 )
-@TypeConverters(ListConverter::class)
+@TypeConverters(SetConverter::class)
 abstract class WperdeDatabase : RoomDatabase() {
 
     abstract fun productDao(): ProductDao

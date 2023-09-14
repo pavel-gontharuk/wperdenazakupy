@@ -7,5 +7,5 @@ import androidx.room.PrimaryKey
 data class BucketEntity(
     @PrimaryKey val id: Int,
     val name: String,
-    val list: List<Int>
+    val productIds: Set<Int>
 )
