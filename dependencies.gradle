@@ -6,8 +6,8 @@ ext {
             minsdk          : '26',
             // core
             kotlin          : '1.8.10',
-            ktx             : '1.9.0',
-            ktxruntime      : '2.6.1',
+            ktx             : '1.12.0',
+            ktxruntime      : '2.6.2',
             gradle          : '8.1.0',
             // di
             dagger          : '2.47',
@@ -21,8 +21,8 @@ ext {
             material        : '1.9.0',
             activitycompose : '1.7.2',
             composebom      : '2023.09.00',
-            navigation      : '2.6.0',
-            composelifecycle: '2.6.1',
+            navigation      : '2.7.2',
+            composelifecycle: '2.6.2',
             // presentation
             viewmodel       : '2.4.1',
             runtimektx      : '2.6.1',
