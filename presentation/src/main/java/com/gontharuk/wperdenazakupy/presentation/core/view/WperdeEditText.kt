@@ -1,6 +1,7 @@
 package com.gontharuk.wperdenazakupy.presentation.core.view
 
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,7 +27,7 @@ fun WperdeEditText(
     textStyle: TextStyle = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        color = Color.Black,
+        color = MaterialTheme.colorScheme.primary,
     ),
     listener: Listener<String> = Listener { },
 ) {

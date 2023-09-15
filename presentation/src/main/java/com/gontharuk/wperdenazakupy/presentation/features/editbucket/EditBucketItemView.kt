@@ -8,11 +8,14 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.gontharuk.wperdenazakupy.presentation.core.view.WperdeText
 import com.gontharuk.wperdenazakupy.presentation.resources.cleanClickable
 
 @Composable
@@ -27,13 +30,21 @@ fun EditBucketItemView(
                 .fillMaxSize()
                 .statusBarsPadding()
                 .navigationBarsPadding()
-                .imePadding()
+                .imePadding(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Checkbox(
                 checked = item.selected,
-                onCheckedChange = {}
+                onCheckedChange = {},
+                modifier = Modifier
+                    .cleanClickable { }
             )
-            WperdeText(text = item.name)
+            Text(
+                text = item.name,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.primary,
+                textAlign = TextAlign.Center
+            )
         }
         Divider(
             color = Color.Black,

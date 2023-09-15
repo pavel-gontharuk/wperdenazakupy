@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="save">Save</string>
+    <string name="description">Description</string>
+    <string name="name">Name</string>
+    <string name="edit_product">Edit Product</string>
+    <string name="menu">Menu</string>
+    <string name="products">Products</string>
+    <string name="edit">Edit</string>
+    <string name="edit_bucket">Edit Bucket</string>
+    <string name="product_list">Product List</string>
+
+    <string name="__EXAMPLE__">__EXAMPLE__</string>
+</resources>

@@ -18,17 +18,5 @@ sealed class EditBucketState(val items: List<EditBucketItem> = emptyList()) {
                 selected = bucket.productIds.contains(it.id),
             )
         }
-    ) {
-        fun clicked(item: EditBucketItem): EditBucketState {
-            val update = bucket.productIds
-                .toMutableSet()
-                .also {
-                    if (item.selected) it.remove(item.id)
-                    else it.add(item.id)
-                }.toSet()
-            return this.copy(
-                bucket = bucket.copy(productIds = update)
-            )
-        }
-    }
+    )
 }
