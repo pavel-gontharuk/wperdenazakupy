@@ -2,7 +2,6 @@ package com.gontharuk.wperdenazakupy.presentation.features.editbucket
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gontharuk.core.utils.log
 import com.gontharuk.wperdenazakupy.domain.model.Bucket
 import com.gontharuk.wperdenazakupy.domain.usecase.bucket.BucketUseCase
 import com.gontharuk.wperdenazakupy.domain.usecase.product.ProductUseCase
@@ -26,19 +25,16 @@ class EditBucketViewModel @Inject constructor(
 
     suspend fun fetch() {
         val products = viewModelScope.async(Dispatchers.IO) {
-            "$this products".log()
             productUseCase.products()
                 .sortedBy { it.name }
         }
         val bucket = viewModelScope.async(Dispatchers.IO) {
-            "$this bucket".log()
             bucketUseCase.getAll()
         }
-        ("p2").log()
         _state.value = EditBucketState.EditBucket(
             bucket = bucket.await().firstOrNull() ?: Bucket(name = ""),
             products = products.await()
-        ).also { it.bucket.log() }
+        )
     }
 
     fun clicked(item: EditBucketItem) {
