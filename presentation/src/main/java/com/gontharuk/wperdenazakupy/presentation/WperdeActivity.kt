@@ -22,11 +22,15 @@ class WperdeActivity : ComponentActivity() {
             /** TODO temporary dark theme is forced*/
             WperdeTheme(darkTheme = true) {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Surface(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
                     MainNavHost(navController = navController)
                 }
-                MaterialTheme.colorScheme.secondary
             }
         }
     }
 }
+

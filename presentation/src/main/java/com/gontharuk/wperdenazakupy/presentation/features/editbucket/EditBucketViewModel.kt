@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.gontharuk.wperdenazakupy.domain.model.Bucket
 import com.gontharuk.wperdenazakupy.domain.usecase.bucket.BucketUseCase
 import com.gontharuk.wperdenazakupy.domain.usecase.product.ProductUseCase
+import com.gontharuk.wperdenazakupy.presentation.features.editbucket.entity.EditBucketItemModel
+import com.gontharuk.wperdenazakupy.presentation.features.editbucket.entity.EditBucketState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -37,7 +39,7 @@ class EditBucketViewModel @Inject constructor(
         )
     }
 
-    fun clicked(item: EditBucketItem) {
+    fun clicked(item: EditBucketItemModel) {
         val state = (state.value as? EditBucketState.EditBucket) ?: return
         state.bucket.productIds
             .toMutableSet()

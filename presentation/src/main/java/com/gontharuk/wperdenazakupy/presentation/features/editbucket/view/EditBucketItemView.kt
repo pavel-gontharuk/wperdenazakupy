@@ -1,4 +1,4 @@
-package com.gontharuk.wperdenazakupy.presentation.features.editbucket
+package com.gontharuk.wperdenazakupy.presentation.features.editbucket.view
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -6,24 +6,28 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Divider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.gontharuk.wperdenazakupy.presentation.R
+import com.gontharuk.wperdenazakupy.presentation.features.editbucket.entity.EditBucketItemModel
 import com.gontharuk.wperdenazakupy.presentation.resources.cleanClickable
 
 @Composable
 fun EditBucketItemView(
-    item: EditBucketItem,
-    onClicked: (EditBucketItem) -> Unit
+    modifier: Modifier = Modifier,
+    item: EditBucketItemModel,
+    onClicked: (EditBucketItemModel) -> Unit
 ) {
-    Column {
+    Column(modifier = modifier) {
         Row(
             modifier = Modifier
                 .cleanClickable { onClicked(item) }
@@ -33,11 +37,12 @@ fun EditBucketItemView(
                 .imePadding(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Checkbox(
-                checked = item.selected,
-                onCheckedChange = {},
-                modifier = Modifier
-                    .cleanClickable { }
+            Icon(
+                painter = (if (item.selected) R.drawable.baseline_check_box_24
+                else R.drawable.baseline_check_box_outline_blank_24).let {
+                    painterResource(it)
+                },
+                null
             )
             Text(
                 text = item.name,

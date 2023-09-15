@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ProductListItem(data: ProductListItemForm) {
+fun ProductListItemView(data: ProductListItemModel) {
 
     Column {
 
