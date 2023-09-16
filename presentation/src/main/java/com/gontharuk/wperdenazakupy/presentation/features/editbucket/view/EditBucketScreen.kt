@@ -41,10 +41,5 @@ fun EditBucketScreen(
                 is EditBucketState.Loading -> Loading()
             }
         }
-        Text(
-            text = stringResource(R.string.edit_bucket),
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
     }
 }

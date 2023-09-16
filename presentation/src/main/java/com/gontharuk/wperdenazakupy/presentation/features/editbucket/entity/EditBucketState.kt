@@ -5,7 +5,7 @@ import com.gontharuk.wperdenazakupy.domain.model.Product
 
 sealed class EditBucketState {
 
-    object Loading : EditBucketState()
+    data object Loading : EditBucketState()
 
     data class EditBucket(
         val bucket: Bucket,
