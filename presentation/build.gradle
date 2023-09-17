@@ -66,6 +66,7 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "com.google.android.material:material:${versions.material}"
+    implementation "androidx.compose.material:material:${versions.materialcompose}"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.ktxruntime}"
     implementation "androidx.activity:activity-compose:${versions.activitycompose}"
     implementation platform("androidx.compose:compose-bom:${versions.composebom}")

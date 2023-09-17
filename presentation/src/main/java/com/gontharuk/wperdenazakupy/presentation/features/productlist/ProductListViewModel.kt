@@ -2,6 +2,7 @@ package com.gontharuk.wperdenazakupy.presentation.features.productlist
 
 import androidx.lifecycle.ViewModel
 import com.gontharuk.wperdenazakupy.domain.usecase.product.ProductUseCase
+import com.gontharuk.wperdenazakupy.presentation.core.tools.log
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,5 +25,21 @@ class ProductListViewModel @Inject constructor(
                 .map { it.toForm() }
         }
         _state.value = state.value.copy(list = list)
+    }
+
+    fun clicked(item: ProductListItemModel) {
+        item.log()
+        val list = state.value.list
+        val index = list.indexOf(item).also { if (it < 0) return }
+        list.toMutableList()
+            .also {
+                it[index] = item.copy(
+                    expanded = !item.expanded
+                ).log()
+            }.also { result ->
+                _state.value = state.value.copy(
+                    list = result
+                )
+            }
     }
 }

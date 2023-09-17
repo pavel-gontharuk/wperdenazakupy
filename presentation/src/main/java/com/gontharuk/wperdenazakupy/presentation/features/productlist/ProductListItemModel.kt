@@ -4,7 +4,8 @@ import com.gontharuk.wperdenazakupy.domain.model.Product
 
 data class ProductListItemModel(
     val title: String,
-    val description: String
+    val description: String,
+    val expanded: Boolean = false
 )
 
 fun Product.toForm(): ProductListItemModel = ProductListItemModel(

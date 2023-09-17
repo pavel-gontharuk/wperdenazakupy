@@ -31,7 +31,7 @@ private val darkColorScheme = darkColorScheme(
 //    onTertiaryContainer = OnTertiaryContainer_dark,
     background = Background_dark,
 //    onBackground = OnBackground_dark,
-//    surface = Surface_dark,
+    surface = Surface_dark,
 //    onSurface = OnSurface_dark,
 //    surfaceVariant = SurfaceVariant_dark,
 //    onSurfaceVariant = OnSurfaceVariant_dark,
@@ -63,7 +63,7 @@ private val lightColorScheme = lightColorScheme(
 //    onTertiaryContainer = OnTertiaryContainer_light,
     background = Background_light,
 //    onBackground = OnBackground_light,
-//    surface = Surface_light,
+    surface = Surface_light,
 //    onSurface = OnSurface_light,
 //    surfaceVariant = SurfaceVariant_light,
 //    onSurfaceVariant = OnSurfaceVariant_light,
@@ -107,6 +107,7 @@ fun WperdeTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = typography,
-        content = content
+        content = content,
+        shapes = shapes
     )
 }
