@@ -1,7 +1,7 @@
 package com.gontharuk.wperdenazakupy.presentation.usecasedi
 
-import com.gontharuk.wperdenazakupy.domain.usecase.bucket.BucketUseCase
-import com.gontharuk.wperdenazakupy.domain.usecase.bucket.BucketUseCaseImpl
+import com.gontharuk.wperdenazakupy.domain.usecase.category.CategoryUseCase
+import com.gontharuk.wperdenazakupy.domain.usecase.category.CategoryUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -10,11 +10,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface BucketModule {
+interface CategoryModule {
 
     @Binds
     @Singleton
-    fun provideBucketUseCase(
-        bucketUseCase: BucketUseCaseImpl
-    ): BucketUseCase
+    fun provideCategoryUseCase(
+        categoryUseCase: CategoryUseCaseImpl
+    ): CategoryUseCase
 }

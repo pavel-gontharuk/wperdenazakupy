@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.gontharuk.wperdenazakupy.presentation.R
+import com.gontharuk.wperdenazakupy.presentation.core.view.Loading
 import com.gontharuk.wperdenazakupy.presentation.features.editbucket.EditBucketViewModel
 import com.gontharuk.wperdenazakupy.presentation.features.editbucket.entity.EditBucketState
 

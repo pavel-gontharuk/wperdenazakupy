@@ -9,6 +9,7 @@
     <string name="edit">Edit</string>
     <string name="edit_bucket">Edit Bucket</string>
     <string name="product_list">Product List</string>
+    <string name="edit_category">Edit Category</string>
 
     <string name="__EXAMPLE__">__EXAMPLE__</string>
 </resources>
